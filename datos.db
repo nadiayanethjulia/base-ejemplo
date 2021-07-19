@@ -1,0 +1,193 @@
+
+-- =============================================
+-- Seleccionar la base de datos
+-- =============================================
+use eurekabank;
+set names utf8;
+-- =============================================
+-- Cargar Datos de Prueba
+-- =============================================
+-- Tabla: Moneda
+insert into moneda values ( '01', 'Soles' );
+insert into moneda values ( '02', 'Dolares' );
+-- Tabla: CargoMantenimiento
+insert into cargomantenimiento values ( '01', 3500.00, 7.00 );
+insert into cargomantenimiento values ( '02', 1200.00, 2.50 );
+-- Tabla: CargoMovimiento
+insert into CostoMovimiento values ( '01', 2.00 );
+insert into CostoMovimiento values ( '02', 0.60 );
+-- Tabla: InteresMensual
+insert into InteresMensual values ( '01', 0.70 );
+insert into InteresMensual values ( '02', 0.60 );
+-- Tabla: TipoMovimiento
+insert into TipoMovimiento values( '001', 'Apertura de Cuenta', 'INGRESO', 'ACTIVO' );
+insert into TipoMovimiento values( '002', 'Cancelar Cuenta', 'SALIDA', 'ACTIVO' );
+insert into TipoMovimiento values( '003', 'Deposito', 'INGRESO', 'ACTIVO' );
+insert into TipoMovimiento values( '004', 'Retiro', 'SALIDA', 'ACTIVO' );
+insert into TipoMovimiento values( '005', 'Interes', 'INGRESO', 'ACTIVO' );
+insert into TipoMovimiento values( '006', 'Mantenimiento', 'SALIDA', 'ACTIVO' );
+insert into TipoMovimiento values( '007', 'ITF', 'SALIDA', 'ACTIVO' );
+insert into TipoMovimiento values( '008', 'Transferencia', 'INGRESO', 'ACTIVO' );
+insert into TipoMovimiento values( '009', 'Transferencia', 'SALIDA', 'ACTIVO' );
+insert into TipoMovimiento values( '010', 'Cargo por Movimiento', 'SALIDA', 'ACTIVO' );
+-- Tabla: Sucursal
+insert into sucursal values( '001', 'Sipan', 'Chiclayo', 'Av. Balta 1456', 2 );
+insert into sucursal values( '002', 'Chan Chan', 'Trujillo', 'Jr. Independencia 456', 3 );
+insert into sucursal values( '003', 'Los Olivos', 'Lima', 'Av. Central 1234', 0 );
+insert into sucursal values( '004', 'Pardo', 'Lima', 'Av. Pardo 345 - Miraflores', 0 );
+insert into sucursal values( '005', 'Misti', 'Arequipa', 'Bolivar 546', 0 );
+insert into sucursal values( '006', 'Machupicchu', 'Cusco', 'Calle El Sol 534', 0 );
+insert into sucursal values( '007', 'Grau', 'Piura', 'Av. Grau 1528', 0 );
+-- Tabla: Empleado
+INSERT INTO empleado VALUES( '9999', 'Internet', 'Internet', 'internet', 'Internet', 'internet' );
+INSERT INTO empleado VALUES( '0001', 'Romero', 'Castillo', 'Carlos Alberto', 'Trujillo', 'Call1 1 Nro. 456' );
+INSERT INTO empleado VALUES( '0002', 'Castro', 'Vargas', 'Lidia', 'Lima', 'Federico Villarreal 456 - SMP' );
+INSERT INTO empleado VALUES( '0003', 'Reyes', 'Ortiz', 'Claudia', 'Lima', 'Av. Aviación 3456 - San Borja' );
+INSERT INTO empleado VALUES( '0004', 'Ramos', 'Garibay', 'Angelica', 'Chiclayo', 'Calle Barcelona 345' );
+INSERT INTO empleado VALUES( '0005', 'Ruiz', 'Zabaleta', 'Claudia', 'Cusco', 'Calle Cruz Verde 364' );
+INSERT INTO empleado VALUES( '0006', 'Cruz', 'Tarazona', 'Ricardo', 'Areguipa', 'Calle La Gruta 304' );
+INSERT INTO empleado VALUES( '0007', 'Diaz', 'Flores', 'Edith', 'Lima', 'Av. Pardo 546' );
+INSERT INTO empleado VALUES( '0008', 'Sarmiento', 'Bellido', 'Claudia Rocio', 'Areguipa', 'Calle Alfonso Ugarte 1567' );
+INSERT INTO empleado VALUES( '0009', 'Pachas', 'Sifuentes', 'Luis Alberto', 'Trujillo', 'Francisco Pizarro 1263' );
+INSERT INTO empleado VALUES( '0010', 'Tello', 'Alarcon', 'Hugo Valentin', 'Cusco', 'Los Angeles 865' );
+INSERT INTO empleado VALUES( '0011', 'Carrasco', 'Vargas', 'Pedro Hugo', 'Chiclayo', 'Av. Balta 1265' );
+INSERT INTO empleado VALUES( '0012', 'Mendoza', 'Jara', 'Monica Valeria', 'Lima', 'Calle Las Toronjas 450' );
+INSERT INTO empleado VALUES( '0013', 'Espinoza', 'Melgar', 'Victor Eduardo', 'Huancayo', 'Av. San Martin 6734 Dpto. 508 ' );
+INSERT INTO empleado VALUES( '0014', 'Hidalgo', 'Sandoval', 'Milagros Leonor', 'Chiclayo', 'Av. Luis Gonzales 1230' );
+-- Tabla: Usuario
+INSERT INTO usuario VALUES( '9999',  'internet',     SHA('internet'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0001',  'cromero',      SHA('chicho'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0002',  'lcastro',      SHA('flaca'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0003',  'creyes',       SHA('linda'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0004',  'aramos',       SHA('china'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0005',  'cvalencia',    SHA('angel'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0006',  'rcruz',        SHA('cerebro'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0007',  'ediaz',        SHA('princesa'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0008',  'csarmiento',   SHA('chinita'), 'ANULADO' );
+INSERT INTO usuario VALUES( '0009',  'lpachas',      SHA('gato'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0010',  'htello',       SHA('machupichu'), 'ACTIVO' );
+INSERT INTO usuario VALUES( '0011',  'pcarrasco',    SHA('tinajones'), 'ACTIVO' );
+-- Tabla: Modulo
+INSERT INTO Modulo VALUES( 1, 'Procesos', 'ACTIVO');
+INSERT INTO Modulo VALUES( 2, 'Tablas', 'ACTIVO');
+INSERT INTO Modulo VALUES( 3, 'Consultas', 'ACTIVO');
+INSERT INTO Modulo VALUES( 4, 'Reportes', 'ACTIVO');
+INSERT INTO Modulo VALUES( 5, 'Util', 'ACTIVO');
+INSERT INTO Modulo VALUES( 6, 'Seguridad', 'ACTIVO');
+-- Tabla: Permiso
+-- Usuario: 0001
+INSERT INTO Permiso VALUES( '0001', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0001', 6, 'ACTIVO');
+-- Usuario: 0002
+INSERT INTO Permiso VALUES( '0002', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0002', 5, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0002', 6, 'CANCELADO');
+-- Usuario: 0003
+INSERT INTO Permiso VALUES( '0003', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 2, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0003', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0003', 6, 'CANCELADO');
+
+-- Usuario: 0004
+INSERT INTO Permiso VALUES( '0004', 1, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0004', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0004', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0004', 4, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0004', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0004', 6, 'CANCELADO');
+
+-- Usuario: 0005
+INSERT INTO Permiso VALUES( '0005', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0005', 2, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0005', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0005', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0005', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0005', 6, 'CANCELADO');
+
+-- Usuario: 0006
+INSERT INTO Permiso VALUES( '0006', 1, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0006', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0006', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0006', 4, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0006', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0006', 6, 'ACTIVO');
+
+-- Usuario: 0007
+INSERT INTO Permiso VALUES( '0007', 1, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0007', 2, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0007', 3, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0007', 4, 'CANCELADO');
+INSERT INTO Permiso VALUES( '0007', 5, 'ACTIVO');
+INSERT INTO Permiso VALUES( '0007', 6, 'CANCELADO');
+
+-- Asignado
+
+insert into Asignado values( '000001', '001', '0004', '20071115', null );
+insert into Asignado values( '000002', '002', '0001', '20071120', null );
+insert into Asignado values( '000003', '003', '0002', '20071128', null );
+insert into Asignado values( '000004', '004', '0003', '20071212', '20080325' );
+insert into Asignado values( '000005', '005', '0006', '20071220', null );
+insert into Asignado values( '000006', '006', '0005', '20080105', null );
+insert into Asignado values( '000007', '004', '0007', '20080107', null );
+insert into Asignado values( '000008', '005', '0008', '20080107', null );
+insert into Asignado values( '000009', '001', '0011', '20080108', null );
+insert into Asignado values( '000010', '002', '0009', '20080108', null );
+insert into Asignado values( '000011', '006', '0010', '20080108', null );
+-- Tabla: Parametro
+insert into Parametro values( '001', 'ITF - Impuesto a la Transacciones Financieras', '0.08', 'ACTIVO' );
+insert into Parametro values( '002', 'Número de Operaciones Sin Costo', '15', 'ACTIVO' );
+-- Tabla: Cliente
+insert into cliente values( '00001', 'CORONEL', 'CASTILLO', 'ERIC GUSTAVO', '06914897', 'LIMA', 'LOS OLIVOS', '9666-4457', 'gcoronel@viabcp.com' );
+ BIN +17.5 KB EurekaBank/MySQL/Modelo/Thumbs.db 
+Binary file not shown.
+ 45  EurekaBank/MySQL/Vistas/v_cuenta.sql 
+@@ -0,0 +1,45 @@
+----------------------------------------------------
+-- Autor:   Eric Gustavo Coronel Castillo
+-- Blog:    gcoronelc.blogspot.com
+-- Email:   gcoronelc@gmail.com
+-- Youtube: https://goo.gl/9GFBaC
+----------------------------------------------------
+
+create view v_cuenta(
+sucucodigo, sucunombre, cliecodigo, 
+cliepaterno, cliematerno, clienombre, 
+cuencodigo, cuensaldo, cuenestado, 
+monecodigo, monenombre )
+as
+select 
+  su.chr_sucucodigo  sucucodigo,
+  su.vch_sucunombre  sucunombre,
+  cl.chr_cliecodigo  cliecodigo,
+  cl.vch_cliepaterno cliepaterno,
+  cl.vch_cliematerno cliematerno,
+  cl.vch_clienombre  clienombre,
+  c.chr_cuencodigo  cuencodigo,
+  c.dec_cuensaldo   cuensaldo,
+  c.vch_cuenestado  cuenestado,
+  mo.chr_monecodigo  monecodigo,
+  mo.vch_monedescripcion monenombre
+from cuenta c 
+join moneda mo on c.chr_monecodigo = mo.chr_monecodigo
+join cliente cl on c.chr_cliecodigo = cl.chr_cliecodigo
+join sucursal su on c.chr_sucucodigo = su.chr_sucucodigo;
+
+
+
+select * from v_cuenta
+where cuencodigo='00100002';
+
+
+select cuencodigo, monenombre,
+cuensaldo, cuenestado
+from v_cuenta where cuencodigo = ?;
+
